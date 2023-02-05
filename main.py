@@ -15,19 +15,18 @@ def main():
     load_dotenv()
     token = os.environ["BITLY_TOKEN"]
 
-    if is_bitlink (token, url):
-        try:
+    try:
+        if is_bitlink (token, url):
             number_clicks = count_clicks(token, url)
             print(f"По вашей ссылке было {number_clicks} перехода(ов)")
-        except requests.exceptions.HTTPError:
-            print('Что то пошло не так' )
-    else:
-        try:
+        else:
             short_link = shorten_link(token, url)
             print(short_link)
-        except requests.exceptions.HTTPError:
-            print('Что то пошло не так')
-        
+    except requests.exceptions.HTTPError:
+            print('Вы ввели неправильную ссылку или неверный токен.')
+    except requests.exceptions.ConnectionError:
+        print('ConnectionError: Не могу подключиться к серверу.')
+
 
 def is_bitlink (token, url):
     headers = {'Authorization': token}
