@@ -16,8 +16,7 @@
 
 
 Запуск в командной строке
-
-<img width="199" alt="image" src="https://user-images.githubusercontent.com/55636018/216811129-9fc41dcc-f15a-4af7-bfcf-d3395f6fd3e1.png">
+> python3 main.py
 
 Результат
 
@@ -31,8 +30,7 @@
 
 
 Запуск в командной строке
-
-<img width="344" alt="image" src="https://user-images.githubusercontent.com/55636018/216811484-4bf9e4ea-a04c-4e46-80bf-2bd5746fe2b6.png">
+> python3 main.py https://www.google.com
 
 Следует иметь ввиду, что в отладочном варианте, если Вы забыли ввести ссылку, то подставится значение по умолчанию https://google.com
 
@@ -49,7 +47,8 @@ requests 2.24.0
 
 dotenv 0.21.1
 
-Можно установить командой  PIP install -r requirement.txt
+Можно установить командой  
+> PIP install -r requirement.txt
 
 
 ## Отказ от ответственности
