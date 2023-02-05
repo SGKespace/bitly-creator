@@ -1,0 +1,2 @@
+requests == 2.24.0
+dotenv == 0.21.1
