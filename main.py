@@ -29,14 +29,16 @@ def main():
 
 def is_bitlink(token, url):
     headers = {'Authorization': token}
-    response = requests.get(f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc  + urlparse(url).path}", headers=headers)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc  + urlparse(url).path}"
+    response = requests.get(request_url, headers=headers)
     return response.ok
 
 
 def count_clicks(token, url):
     headers = {'Authorization': token}
     params = (('unit', 'day'), ('units', '-1'),)
-    response = requests.get(f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc  + urlparse(url).path}/clicks/summary",headers=headers, params=params)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc  + urlparse(url).path}/clicks/summary"
+    response = requests.get(request_url, headers=headers, params=params)
     return response.json()['total_clicks']
     
 
