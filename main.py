@@ -2,6 +2,7 @@ import requests
 import os
 from dotenv import load_dotenv
 import argparse
+from urllib.parse import urlparse
 
 def createParser():
     parser = argparse.ArgumentParser()
@@ -9,14 +10,12 @@ def createParser():
     return parser.parse_args()
 
 def main():
-
     # url = input('Введите ссылку: ')
     url = createParser().url
     load_dotenv()
     token = os.environ["BITLY_TOKEN"]
-
     try:
-        if is_bitlink (token, url):
+        if is_bitlink(token, url):
             number_clicks = count_clicks(token, url)
             print(f"По вашей ссылке было {number_clicks} перехода(ов)")
         else:
@@ -28,16 +27,16 @@ def main():
         print('ConnectionError: Не могу подключиться к серверу.')
 
 
-def is_bitlink (token, url):
+def is_bitlink(token, url):
     headers = {'Authorization': token}
-    response = requests.get(f"https://api-ssl.bitly.com/v4/bitlinks/{url.replace('http://', '').replace('https://', '')}", headers=headers)
+    response = requests.get(f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc  + urlparse(url).path}", headers=headers)
     return response.ok
 
 
 def count_clicks(token, url):
     headers = {'Authorization': token}
     params = (('unit', 'day'), ('units', '-1'),)
-    response = requests.get(f"https://api-ssl.bitly.com/v4/bitlinks/{url.replace('http://', '').replace('https://', '')}/clicks/summary",headers=headers, params=params)
+    response = requests.get(f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc  + urlparse(url).path}/clicks/summary",headers=headers, params=params)
     return response.json()['total_clicks']
     
 
