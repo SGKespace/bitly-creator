@@ -3,7 +3,7 @@
 
 
 Полученный токен надо поместить в переменные окружения. Например в файл .env
-<img width="528" alt="image" src="https://user-images.githubusercontent.com/55636018/216819674-f90ed895-c2eb-4eaf-a92c-6ee30750eaf3.png">
+<img width="515" alt="image" src="https://user-images.githubusercontent.com/55636018/216819770-ef0a686a-a1a5-4c4c-b41d-cfb743ca7c62.png">
 
 
 
