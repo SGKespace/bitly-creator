@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 def create_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('url', nargs='?', default="https://google.com", type=str)
+    parser.add_argument('url', nargs='?')
     return parser
 
 
