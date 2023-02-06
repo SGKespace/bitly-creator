@@ -3,8 +3,7 @@
 
 
 Полученный токен надо поместить в переменные окружения. Например в файл .env
-<img width="515" alt="image" src="https://user-images.githubusercontent.com/55636018/216819770-ef0a686a-a1a5-4c4c-b41d-cfb743ca7c62.png">
-
+<img width="703" alt="image" src="https://user-images.githubusercontent.com/55636018/216776142-725dc191-b820-492f-9766-d3f02cc30f2c.png">
 
 
 Документация по API https://dev.bitly.com/api-reference/#createBitlink
@@ -17,7 +16,10 @@
 
 
 Запуск в командной строке
-> python3 main.py
+
+```
+python3 main.py 
+```
 
 Результат
 
@@ -31,7 +33,9 @@
 
 
 Запуск в командной строке
-> python3 main.py https://www.google.com
+```
+python3 main.py https://www.google.com 
+```
 
 Следует иметь ввиду, что в отладочном варианте, если Вы забыли ввести ссылку, то подставится значение по умолчанию https://google.com
 
@@ -49,7 +53,9 @@ requests 2.24.0
 dotenv 0.21.1
 
 Можно установить командой  
-> PIP install -r requirement.txt
+``` 
+PIP install -r requirement.txt
+```
 
 
 ## Отказ от ответственности
