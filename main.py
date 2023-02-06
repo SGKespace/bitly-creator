@@ -33,8 +33,8 @@ def main():
 
 def is_bitlink(token, url):
     headers = {'Authorization': token}
-    parse_url = urlparse(url)
-    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{parse_url.netloc}{parse_url.path}"
+    parsed_url = urlparse(url)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{parsed_url.netloc}{parsed_url.path}"
     response = requests.get(request_url, headers=headers)
     return response.ok
 
@@ -42,8 +42,8 @@ def is_bitlink(token, url):
 def count_clicks(token, url):
     headers = {'Authorization': token}
     params = (('unit', 'day'), ('units', '-1'),)
-    parse_url = urlparse(url)
-    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{parse_url.netloc}{parse_url.path}/clicks/summary"
+    parsed_url = urlparse(url)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{parsed_url.netloc}{parsed_url.path}/clicks/summary"
     response = requests.get(request_url, headers=headers, params=params)
     return response.json()['total_clicks']
     
