@@ -3,7 +3,7 @@
 
 
 Полученный токен надо поместить в переменные окружения. Например в файл .env
-<img width="703" alt="image" src="https://user-images.githubusercontent.com/55636018/216776142-725dc191-b820-492f-9766-d3f02cc30f2c.png">
+<img width="655" alt="image" src="https://user-images.githubusercontent.com/55636018/217012904-e3564c45-bea4-4794-8710-892fefa6bc60.png">
 
 
 Документация по API https://dev.bitly.com/api-reference/#createBitlink
