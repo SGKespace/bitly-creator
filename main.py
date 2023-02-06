@@ -4,14 +4,14 @@ from dotenv import load_dotenv
 import argparse
 from urllib.parse import urlparse
 
-def createParser():
+def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('url', nargs='?', default="https://google.com", type=str)
     return parser.parse_args()
 
 def main():
     # url = input('Введите ссылку: ')
-    url = createParser().url
+    url = create_parser().url
     load_dotenv()
     token = os.environ["BITLY_TOKEN"]
     headers = {'Authorization': token}
