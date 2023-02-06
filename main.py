@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import argparse
 from urllib.parse import urlparse
 
+
 def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('url', nargs='?')
@@ -32,8 +33,8 @@ def main():
 
 def is_bitlink(token, url):
     headers = {'Authorization': token}
-    url_parse = urlparse(url)
-    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url_parse.netloc}{url_parse.path}"
+    parse_url = urlparse(url)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{parse_url.netloc}{parse_url.path}"
     response = requests.get(request_url, headers=headers)
     return response.ok
 
@@ -41,8 +42,8 @@ def is_bitlink(token, url):
 def count_clicks(token, url):
     headers = {'Authorization': token}
     params = (('unit', 'day'), ('units', '-1'),)
-    url_parse = urlparse(url)
-    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url_parse.netloc}{url_parse.path}/clicks/summary"
+    parse_url = urlparse(url)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{parse_url.netloc}{parse_url.path}/clicks/summary"
     response = requests.get(request_url, headers=headers, params=params)
     return response.json()['total_clicks']
     
