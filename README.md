@@ -11,9 +11,7 @@
 
 ## Примеры запуска скрипта 
 
-## 1. Вариант - диалоговый, код в программе
-<img width="323" alt="image" src="https://user-images.githubusercontent.com/55636018/216811237-fb7291d5-2ec9-48b6-b65a-baa187d5cd8d.png">
-
+## 1. Вариант - диалоговый
 
 Запуск в командной строке
 
@@ -28,9 +26,7 @@ python3 main.py
 <img width="373" alt="image" src="https://user-images.githubusercontent.com/55636018/216755800-a7fcdb25-9589-4bad-8ea4-13a0c2e38c8c.png">
 
 
-## 2. Вариант - отладочный, код в программе
-<img width="357" alt="image" src="https://user-images.githubusercontent.com/55636018/216811359-847bc279-ca14-4485-a262-82e3eeecca03.png">
-
+## 2. Вариант - отладочный
 
 Запуск в командной строке
 ```
