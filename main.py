@@ -7,11 +7,12 @@ from urllib.parse import urlparse
 def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('url', nargs='?', default="https://google.com", type=str)
-    return parser.parse_args()
+    return parser
+
 
 def main():
     # url = input('Введите ссылку: ')
-    url = create_parser().url
+    url = create_parser().parse_args().url
     load_dotenv()
     token = os.environ["BITLY_TOKEN"]
     headers = {'Authorization': token}
