@@ -11,8 +11,9 @@ def create_parser():
 
 
 def main():
-    # url = input('Введите ссылку: ')
     url = create_parser().parse_args().url
+    if not url:
+        url = input('Введите ссылку: ')
     load_dotenv()
     token = os.environ["BITLY_TOKEN"]
     headers = {'Authorization': token}
