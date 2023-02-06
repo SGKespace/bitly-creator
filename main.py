@@ -31,14 +31,16 @@ def main():
 
 
 def is_bitlink(headers, url):
-    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc}{urlparse(url).path}"
+    url_parse = urlparse(url)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url_parse.netloc}{url_parse.path}"
     response = requests.get(request_url, headers=headers)
     return response.ok
 
 
 def count_clicks(headers, url):
     params = (('unit', 'day'), ('units', '-1'),)
-    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{urlparse(url).netloc}{surlparse(url).path}/clicks/summary"
+    url_parse = urlparse(url)
+    request_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url_parse.netloc}{url_parse.path}/clicks/summary"
     response = requests.get(request_url, headers=headers, params=params)
     return response.json()['total_clicks']
     
